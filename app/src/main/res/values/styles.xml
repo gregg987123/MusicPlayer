@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -15,7 +15,6 @@
         https://stackoverflow.com/questions/29860906/widget-appcompat-button-colorbuttonnormal
         -shows-gray -->
         <item name="android:buttonStyle">@style/ButtonColor</item>
-
     </style>
 
     <!--creates style ButtonColor for text-->
@@ -54,6 +53,17 @@
         <item name="android:textAppearance">?android:textAppearanceLarge</item>
     </style>
 
+    <!--Style for Song List Items-->
+    <style name="SongListItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">1dp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
     <style name="ScreenHeadingStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -64,6 +74,5 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:textAppearanceLarge</item>
     </style>
-
 
 </resources>

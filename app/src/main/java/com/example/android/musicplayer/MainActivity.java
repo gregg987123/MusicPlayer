@@ -48,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called station_list, which is
-        // declared in the
-        // activity_main.
+        // declared in the activity_main.
         ListView listView = (ListView) findViewById(R.id.station_list);
 
         // Make the {@link ListView} use the {@link StationAdapter} we created above, so that the
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent playerScreenIntent = new Intent (MainActivity.this, PlayerActivity.class);
+                Intent playerScreenIntent = new Intent(MainActivity.this, PlayerActivity.class);
                 playerScreenIntent.putExtra("station_name_key", station.get(position));
 
                 startActivity(playerScreenIntent);
@@ -74,6 +73,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 
 }

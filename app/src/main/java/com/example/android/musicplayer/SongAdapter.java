@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class StationAdapter extends ArrayAdapter<String> {
+public class SongAdapter extends ArrayAdapter<Song> {
     /**
      * This is a custom constructor (it doesn't mirror a superclass constructor).
      * The context is used to inflate the layout file, and the list is the data we want
@@ -18,23 +18,23 @@ public class StationAdapter extends ArrayAdapter<String> {
      * when more than just a single String will be displayed for each item.
      *
      * @param context The current context. Used to inflate the layout file.
-     * @param station A List of String objects to display in a list
+     * @param song    A List of Song objects to display in a list
      */
-    public StationAdapter(Activity context, ArrayList<String> station) {
+    public SongAdapter(Activity context, ArrayList<Song> song) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
         // the second argument is used when the ArrayAdapter is populating a single TextView.
-        // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
+        // Because this is a custom adapter for two TextViews, the adapter is not
         // going to use this second argument, so it can be any value. Here, we used 0.
-        super(context, 0, station);
+        super(context, 0, song);
     }
 
     /**
      * Provides a view for an AdapterView (ListView, GridView, etc.)
      *
-     * @param position The position in the list of data that should be displayed in the
-     *                 list item view.
+     * @param position    The position in the list of data that should be displayed in the
+     *                    list item view.
      * @param convertView The recycled view to populate.
-     * @param parent The parent ViewGroup that is used for inflation.
+     * @param parent      The parent ViewGroup that is used for inflation.
      * @return The View for the position in the AdapterView.
      */
     @Override
@@ -43,21 +43,27 @@ public class StationAdapter extends ArrayAdapter<String> {
 
         // Check if the existing view is being reused, otherwise inflate the view
         //If there is not a view being recycled, inflate/populate a newly created view.
-        if(listItemView == null) {
+        if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.station_list_item, parent, false);
+                    R.layout.song_list_item, parent, false);
         }
 
-        // Get the {@link Word} object located at this position in the list
-        String currentStation = getItem(position);
+        // Get the {@link Song} object located at this position in the list
+        Song currentSong = getItem(position);
 
-        // Find the TextView in the station_list_item.xml layout with the ID version_name
-        TextView stationTextView = (TextView) listItemView.findViewById(R.id
-                .station_name_text_view);
+        // Find the TextView in the song_list_item.xml layout with the ID song_name_text_view
+        TextView songNameTextView = (TextView) listItemView.findViewById(R.id
+                .song_name_text_view);
 
-        // Get the version name from the current String object and
-        // set this text on the name TextView
-        stationTextView.setText(currentStation);
+        // Get the version name from the current Song object and set this text on the name TextView
+        songNameTextView.setText(currentSong.getSongName());
+
+        // Find the TextView in the song_list_item.xml layout with the ID artist_name_text_view
+        TextView artistNameTextView = (TextView) listItemView.findViewById(R.id
+                .artist_name_text_view);
+
+        // Get the version name from the current Song object and set this text on the name TextView
+        artistNameTextView.setText(currentSong.getArtistName());
 
         // Return the whole list item layout so that it can be shown in the ListView
         return listItemView;

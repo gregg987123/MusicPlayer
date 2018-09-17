@@ -7,4 +7,5 @@
     <string name="previous_button_text">Prev</string>
     <string name="next_button_text">Next</string>
     <string name="station_not_configured_text">Station Is Not Configured Yet, Try Pop or Country</string>
+    <string name="song_list_heading">Song List</string>
 </resources>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -65,7 +66,6 @@ public class PlayerActivity extends AppCompatActivity {
             songs.add(new Song("She Got The Best of Me", "Luke Combs"));
             songs.add(new Song("Blue Tacoma", "Russell Dickerson"));
             songs.add(new Song("Break Up In The End", "Cole Swindell"));
-
         }
 
         if (songs.size() < 1) {
@@ -131,6 +131,26 @@ public class PlayerActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //The following only executes if the selected station is implemented with Songs
+        if (songs.size() > 0) {
+            TextView songListHeadingTextView = (TextView) findViewById(R.id
+                    .song_list_heading);
+            songListHeadingTextView.setText(R.string.song_list_heading);
+
+            // Create an {@link SongAdapter}, whose data source is a list of Songs. The
+            // adapter knows how to create list items for each item in the list.
+            SongAdapter adapter = new SongAdapter(this, songs);
+
+            // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
+            // There should be a {@link ListView} with the view ID called song_list, which is
+            // declared in the PlayerActivity.
+            ListView listView = (ListView) findViewById(R.id.song_list);
+
+            // Make the {@link ListView} use the {@link StationAdapter} we created above, so that the
+            // {@link ListView} will display list items for each {@link Word} in the list.
+            listView.setAdapter(adapter);
+        }
 
     }
 }

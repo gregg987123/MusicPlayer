@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2016 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,8 +12,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -48,8 +46,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:padding="12dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="12dp">
 
         <!--This is the previous song button-->
         <Button
@@ -57,8 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/previous_button_text"
-            />
+            android:text="@string/previous_button_text" />
 
         <!--This is for the Play/Pause button, but since there are no actual audio files, the
         button is not implemented-->
@@ -75,9 +72,20 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/next_button_text"
-            />
+            android:text="@string/next_button_text" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/song_list_heading"
+        style="@style/PlayerScreenStyle"
+        android:padding="24dp"
+        tools:text="Song List" />
+
+    <!--Implements a ListView of all the Songs in the Station. -->
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/song_list"
+        style="@style/ListStyle"
+        android:orientation="vertical" />
 
 </LinearLayout>
