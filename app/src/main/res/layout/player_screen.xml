@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical"
+    tools:context="com.example.android.musicplayer.PlayerActivity">
+
+    <TextView
+        android:id="@+id/player_heading"
+        style="@style/ScreenHeadingStyle"
+        android:text="@string/player_heading" />
+
+    <TextView
+        android:id="@+id/station_name"
+        style="@style/PlayerScreenStyle"
+        android:padding="24dp"
+        tools:text="Station Name" />
+
+    <TextView
+        android:id="@+id/song_name"
+        style="@style/PlayerScreenStyle"
+        android:layout_marginTop="16dp"
+        tools:text="Song Name" />
+
+    <TextView
+        android:id="@+id/artist_name"
+        style="@style/PlayerScreenStyle"
+        tools:text="Artist Name" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+        android:orientation="horizontal">
+
+        <!--This is the previous song button-->
+        <Button
+            android:id="@+id/previous_song_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/previous_button_text"
+            />
+
+        <!--This is for the Play/Pause button, but since there are no actual audio files, the
+        button is not implemented-->
+        <Button
+            android:id="@+id/play_pause_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/play_pause_button_text" />
+
+        <!--This is the next song button-->
+        <Button
+            android:id="@+id/next_song_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/next_button_text"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

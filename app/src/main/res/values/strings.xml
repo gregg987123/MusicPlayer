@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Music Player</string>
+    <string name="station_selector_heading">Choose a Station</string>
+    <string name="player_heading">Now Playing</string>
+    <string name="player_activity">Music Player</string>
+    <string name="play_pause_button_text">Play/Pause</string>
+    <string name="previous_button_text">Prev</string>
+    <string name="next_button_text">Next</string>
+    <string name="station_not_configured_text">Station Is Not Configured Yet, Try Pop or Country</string>
+</resources>

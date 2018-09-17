@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:orientation="vertical"
+    tools:context="com.example.android.musicplayer.MainActivity">
+
+    <TextView
+        android:id="@+id/station_selector_heading_text_view"
+        style="@style/ScreenHeadingStyle"
+        android:text="@string/station_selector_heading" />
+
+    <!--Implements a ListView of all the stations. Currently, only Pop and Country have songs-->
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/station_list"
+        style="@style/ListStyle"
+        android:orientation="vertical" />
+
+</LinearLayout>
